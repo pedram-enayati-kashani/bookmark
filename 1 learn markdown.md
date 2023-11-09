@@ -3,57 +3,57 @@
 ##**head**
 
 #head 1
-```md
+```markdown
 #head 1
 ```
 ##head 2
-```md
+```markdown
 ##head 2
 ```
 ###head 3
-```md
+```markdown
 ###head 3
 ```
 ####head 4
-```md
+```markdown
 ####head 4
 ```
 #####head 5
-```md
+```markdown
 #####head 5
 ```
 ######head 6
-```md
+```markdown
 ######head 6
 ```
 
 ##**Emphasis**
 
 *this text is italic*
-```md
+```markdown
 *this text is italic*
 ```
 _this text is italic_
-```md
+```markdown
 _this text is italic_
 ```
 
 ##**Strong**
 
 **this text is bold**
-```md
+```markdown
 **this text is bold**
 ```
 
 __this text is bold__
-```md
+```markdown
 __this text is bold__
 ```
 
 ##**Link**
 
 [this is my github](https://github.com/pedram-enayati-kashani, 'pedram enayati kashani')
-```md
+```markdown
 [this is my github](https://github.com/pedram-enayati-kashani, 'pedram enayati kashani')
 ```
 
@@ -67,7 +67,7 @@ __this text is bold__
 - javascript
 * jquery
 + php
-```md
+```markdown
 + html
     + html5
 + css
@@ -82,7 +82,7 @@ __this text is bold__
 1. work for 2 years in iran samaneh instead military service
 1. go to abord and find a job
 2. and live like paradise
-```md
+```markdown
 1. work for 2 years in iran samaneh instead military service
 1. go to abord and find a job
 2. and live like paradise
