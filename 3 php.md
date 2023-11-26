@@ -41,3 +41,19 @@ return report information about class
 ```php
 $reflection = new ReflectionMethod($class , $method)
 ```
+
+####**strpos()**
+return postion value in sentens
+```php
+$str = "find something better";
+strpos($st , 'find');
+out : 0
+```
+
+####**stripos()**
+return like strpos but in insensitive
+```php
+$str = "find something better";
+strpos($st , 'betterd');
+out : 15
+```
