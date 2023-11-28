@@ -57,3 +57,20 @@ $str = "find something better";
 strpos($st , 'betterd');
 out : 15
 ```
+
+####**compact()**
+it's get some variable parametre and retun every parametre in array 
+```php
+$color = "red";
+$animal= 'cat',
+$car="bmw";
+compact('color' , 'animal' , 'car');
+out : array (3){["color"] => string(3) "red" ["animal"] => string(3) "cat" ["car"] => string(3) "bmw"} 
+```
+
+####**extract()**
+it's get array and return variable
+```php
+$color = {"color" => "red" , "animal" => "cat" , "car" => "bmw"};
+out : $color , $animal , $car
+```
