@@ -74,3 +74,37 @@ it's get array and return variable
 $color = {"color" => "red" , "animal" => "cat" , "car" => "bmw"};
 out : $color , $animal , $car
 ```
+
+####**sql_autoload_register()**
+with this method you can chose to include one mehode in a class or you can load every methods in a class
+```php
+spl_autoload_register('MyAutoloader::ClassLoader');
+spl_autoload_register('MyAutoloader::LibraryLoader');
+spl_autoload_register('MyAutoloader');
+
+class MyAutoloader
+{
+    public static function ClassLoader($className)
+    {
+         $path = '/path/to/class/';
+
+        include $path.$className.'.php';
+    }
+
+
+    public static function LibraryLoader($className)
+    {
+         $path = '/path/to/class/';
+
+        include $path.$className.'.php';
+    }
+}
+```
+
+##PDO
+
+####**PDO::ATTR_ERRMODE**
+
+```php
+
+```
