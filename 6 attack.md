@@ -66,3 +66,9 @@ second create a token for your form
 </body>
 </html>
 ```
+
+##register_globals
+this going to make key request post to varable this mean `$_POST['username']` == `$username` so you need to make value this method change to off in php.ini
+```
+register_globals= Off
+```
