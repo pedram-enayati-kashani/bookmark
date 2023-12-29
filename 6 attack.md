@@ -16,3 +16,14 @@ sometime someone can with get session id whit write PHPSESSID in url get value s
 session.use_strict_mode=0 change to 1
 session.use_strict_mode=1 changed
 ```
+
+##Methode Header
+with this methode you can redirect your user to the you want user go
+```php
+header("Location: login.php");
+```
+with this your user redirect to login.php if you did't add die or exit after header your script after redirect can be run . right with web you can't see your script but if you send http request wth command line you can see your script with curl
+```command
+curl --include http://localhost/header/panel.php
+```
+to pervent this happening you need add exit or die but if you add die this is more secure
