@@ -1,33 +1,33 @@
-#learn markdown
+# learn markdown
 
-##**head**
+## **head**
 
-#head 1
+# head 1
 ```markdown
-#head 1
+# head 1
 ```
-##head 2
+## head 2
 ```markdown
-##head 2
+## head 2
 ```
-###head 3
+### head 3
 ```markdown
-###head 3
+### head 3
 ```
-####head 4
+#### head 4
 ```markdown
-####head 4
+#### head 4
 ```
-#####head 5
+##### head 5
 ```markdown
-#####head 5
+##### head 5
 ```
-######head 6
+###### head 6
 ```markdown
-######head 6
+###### head 6
 ```
 
-##**Emphasis**
+## **Emphasis**
 
 *this text is italic*
 ```markdown
@@ -38,7 +38,7 @@ _this text is italic_
 _this text is italic_
 ```
 
-##**Strong**
+## **Strong**
 
 **this text is bold**
 ```markdown
@@ -50,14 +50,14 @@ __this text is bold__
 __this text is bold__
 ```
 
-##**Link**
+## **Link**
 
 [this is my github](https://github.com/pedram-enayati-kashani, 'pedram enayati kashani')
 ```markdown
 [this is my github](https://github.com/pedram-enayati-kashani, 'pedram enayati kashani')
 ```
 
-##**List**
+## **List**
 
 **My list language program**
 + html
@@ -77,7 +77,7 @@ __this text is bold__
 + php
 ```
 
-##**List order**
+## **List order**
 ***my future***
 1. work for 2 years in iran samaneh instead military service
 1. go to abord and find a job
@@ -88,7 +88,7 @@ __this text is bold__
 2. and live like paradise
 ```
 
-##**add code**
+## **add code**
 ```html
 <h1>this my start</h1>
 ```

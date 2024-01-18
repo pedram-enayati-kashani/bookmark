@@ -7,7 +7,7 @@ $comment['comment'] == <script>alert('hi')</script>
 htmlentities($comment['comment']);
 ```
 
-##hijack session
+## hijack session
 
 this mean your session value token was stolen or being exposed with than token someone can login without put user and password in login form
 
@@ -17,7 +17,7 @@ session.use_strict_mode=0 change to 1
 session.use_strict_mode=1 changed
 ```
 
-##Methode Header
+## Methode Header
 with this methode you can redirect your user to the you want user go
 ```php
 header("Location: login.php");
@@ -28,7 +28,7 @@ curl --include http://localhost/header/panel.php
 ```
 to pervent this happening you need add exit or die but if you add die this is more secure
 
-##csrf
+## csrf
 
 the first thing you must do every link that you created with id in panel admin must change to form becuse it become method get and this less secure
 example :
@@ -67,7 +67,7 @@ second create a token for your form
 </html>
 ```
 
-##register_globals
+## register_globals
 this going to make key request post to varable this mean `$_POST['username']` == `$username` so you need to make value this method change to off in php.ini
 ```
 register_globals= Off

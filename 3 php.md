@@ -1,6 +1,6 @@
-##**function**
+## **function**
 
-####**str_replace()**
+#### **str_replace()**
 this function get three parameter first the word you want to find second the word you want to replace third is the data
 ```php
 $data = "hello world";
@@ -8,7 +8,7 @@ $str= str_replace("world" , "peter" , $data);
 out = hello peter
 ```
 
-####**explode()**
+#### **explode()**
 this function get three parameter first the separator character that you want to break a sting two data third limit
 ```php
 $data = "hello world";
@@ -19,7 +19,7 @@ out = {
 }
 ```
 
-####**dirname()**
+#### **dirname()**
 return parents path
 ```php
 echo dirname("c:/testweb/home.php") . "<br />";
@@ -29,20 +29,20 @@ c:/testweb
 c:
 ```
 
-####**realpath()**
+#### **realpath()**
 return path file
 ```php
 echo realpath("test.txt");
 out = C:/Inetpub/testweb/test.txt
 ```
 
-####**ReflectionMethod()**
+#### **ReflectionMethod()**
 return report information about class
 ```php
 $reflection = new ReflectionMethod($class , $method)
 ```
 
-####**strpos()**
+#### **strpos()**
 return postion value in sentens
 ```php
 $str = "find something better";
@@ -50,7 +50,7 @@ strpos($st , 'find');
 out : 0
 ```
 
-####**stripos()**
+#### **stripos()**
 return like strpos but in insensitive
 ```php
 $str = "find something better";
@@ -58,7 +58,7 @@ strpos($st , 'betterd');
 out : 15
 ```
 
-####**compact()**
+#### **compact()**
 it's get some variable parametre and retun every parametre in array 
 ```php
 $color = "red";
@@ -68,14 +68,14 @@ compact('color' , 'animal' , 'car');
 out : array (3){["color"] => string(3) "red" ["animal"] => string(3) "cat" ["car"] => string(3) "bmw"} 
 ```
 
-####**extract()**
+#### **extract()**
 it's get array and return variable
 ```php
 $color = {"color" => "red" , "animal" => "cat" , "car" => "bmw"};
 out : $color , $animal , $car
 ```
 
-####**sql_autoload_register()**
+#### **sql_autoload_register()**
 with this method you can chose to include one mehode in a class or you can load every methods in a class
 ```php
 spl_autoload_register('MyAutoloader::ClassLoader');
@@ -101,9 +101,85 @@ class MyAutoloader
 }
 ```
 
-##PDO
+### OPP Object-Oriented Programming
+structure class php :
+```php
+class className {
+    public function method(){
 
-####**PDO::ATTR_ERRMODE**
+    }
+}
+```
+
+#### Abstract classes
+this mean we dont know how is class body we just reserve and where we need to use this class that time we create class body 
+```php
+abstract class Country{
+    public $name
+
+    function __construct($name){ 
+        $this->name = $name;
+    }
+
+    abstract public function shoaar() : string;
+}
+
+class Iran extends Country{
+    public function shoaar() : string{
+        return 'Hi '.$this->name; 
+    }
+}
+$iran = new Iran('Iran');
+$iran->shooar();
+```
+**__construct :** when you call this class this methode called
+
+#### Interface
+this make a law for programmer to make programmer follow the law that admin manager created 
+```php
+interface Animal{
+
+    // public $name;
+    public function eat();
+}
+
+class Cat implements Animal
+{
+
+    public function eat(){
+        echo 'eat very fast';
+    }
+
+}
+
+$cat = new Cat();
+$cat->eat();
+```
+**implements :** this mean create body Animal
+
+**define a value in class :**
+```php
+define("NAME" , $name);
+
+class className{
+
+    const Name = 'pedram';
+
+    public static $color = 'black';
+
+    public function name(){
+        echo self::Name .' '. self::$color;
+
+    }
+}
+
+echo className::name();
+```
+**self :** mean this
+
+### PDO
+
+#### **PDO::ATTR_ERRMODE**
 
 ```php
 

@@ -1,4 +1,4 @@
-##the Advantage in htaccess
+## the Advantage in htaccess
 1. we can define to wich directory we can accessed
 1. we make redirect
 1. we can make one ip to access web
@@ -12,14 +12,14 @@ RewriteEngine On
 ```
 this is help us to do a reidrect
 
-###second
+### second
 ```
 RewriteEngine On
 RewriteBase /
 ```
 this help us to chose redirect to which path and if we write / this is guide us to our base website
 
-###Third
+### Third
 ```
 RewriteEngine On
 RewriteCond  %{REQUEST_FILENAME} !-d
