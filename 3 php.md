@@ -135,7 +135,7 @@ $iran->shooar();
 **__construct :** when you call this class this methode called
 
 #### Interface
-this make a law for programmer to make programmer follow the law that admin manager created 
+this make a law for programmer to make programmer follow the law that admin manager created and methode  interface must be public type
 ```php
 interface Animal{
 
@@ -176,6 +176,27 @@ class className{
 echo className::name();
 ```
 **self :** mean this
+**parent :** call class that your class has extend
+
+**example :** 
+```php
+interface Handler{
+    public function setNext(Handler $handler): Handler; /* (Handler $handler) this mean you property in object of ypur class and (): Handler mean your output ,ust be object of ypur class in otherway this mean you say what type is your output*/
+    public function handler(Handler $request): ?string; /* this mean your output can be string or null */
+}
+
+class className implements Handler{
+
+    protected $query;
+
+    public function reset(): void /* this mean your meathod dosen't has output */
+    {
+        $this->query = new \stdClass; /* this make a empty object */
+    }
+}
+```
+
+
 
 ### PDO
 
