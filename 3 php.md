@@ -42,6 +42,18 @@ return report information about class
 $reflection = new ReflectionMethod($class , $method)
 ```
 
+#### **method_exists()**
+it's check your method in your class exist or not
+```php
+method_exists($class , $method)
+```
+
+#### **call_user_func_array()**
+it find your method from class and calls
+```php
+call_user_func_array($class , $method)
+```
+
 #### **strpos()**
 return postion value in sentens
 ```php
