@@ -213,7 +213,15 @@ class className implements Handler{
 ### PDO
 
 #### **PDO::ATTR_ERRMODE**
-
+with this we can chose how to show and what show in error
 ```php
-
+PDO::ATTR_ERRMODE=> PDO::ERRMODE_EXCEPTION
 ```
+#### **PDO::ATTR_DEFAULT_FETCH_MODE**
+with this ypu can chose how to access to object
+```php
+PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
+```
+
+### ORM : Object Relational Mapping
+this make a intermediary between sql and php with this you right a method with php and this method change your quest to sql command
