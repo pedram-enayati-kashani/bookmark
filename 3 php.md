@@ -225,3 +225,21 @@ PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
 
 ### ORM : Object Relational Mapping
 this make a intermediary between sql and php with this you right a method with php and this method change your quest to sql command
+
+### **Variable variables :**
+```php
+$this->a = "hello";
+$this->b = "hi";
+$this->val = "howdy";
+
+$val = "a";
+echo $this->{$val}; // outputs "hello"
+
+$val = "b";
+echo $this->{$val}; // outputs "hi"
+
+echo $this->val; // outputs "howdy"
+
+echo $this->{"val"}; // also outputs "howdy"
+
+```
