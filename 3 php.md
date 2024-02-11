@@ -193,7 +193,7 @@ echo className::name();
 **example :** 
 ```php
 interface Handler{
-    public function setNext(Handler $handler): Handler; /* (Handler $handler) this mean you property in object of ypur class and (): Handler mean your output ,ust be object of ypur class in otherway this mean you say what type is your output*/
+    public function setNext(Handler $handler): Handler; /* (Handler $handler) this mean you property in object of ypur class and (): Handler mean your output ,ust be object of ypur class in otherway this mean you say what type is your output */
     public function handler(Handler $request): ?string; /* this mean your output can be string or null */
 }
 
@@ -208,7 +208,18 @@ class className implements Handler{
 }
 ```
 
+### **Closure**
+```php
+function input($var,$callBack){ /* callBack is a closure */
+    $function = $callBack();
+}
 
+/* used */
+input($var,function(){
+
+});
+
+```
 
 ### PDO
 
@@ -242,4 +253,12 @@ echo $this->val; // outputs "howdy"
 
 echo $this->{"val"}; // also outputs "howdy"
 
+```
+
+## **Design Pattern**
+
+### **Singleton**
+is a creational design pattern, which ensures that only one object of its kind exists and provides a single point of access to it for any other code.
+```php
+Post::all();
 ```
