@@ -262,3 +262,11 @@ is a creational design pattern, which ensures that only one object of its kind e
 ```php
 Post::all();
 ```
+
+## **Error**
+
+#### **trigger_error**
+with this you can make a warning or fatal error
+```php
+trigger_error("Fatal error", E_USER_ERROR);
+```
