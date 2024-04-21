@@ -16,6 +16,10 @@ follow the exist link in website and collect info in link and save that info in 
 
 **point two :** every time you visit a web page one crawle visit that page with you to see what you do in that page and how mush you stay
 
+***
+
+### key words
+
 **key words :** the word or sentence that user search in google(like tag in website)
 
 ##### tool for find word key in google :
@@ -23,6 +27,19 @@ follow the exist link in website and collect info in link and save that info in 
 + [keyworddiscovery](https://www.keyworddiscovery.com/)
 + [adsgoogle](https://ads.google.com/)
 
-**point three :** search for searched word in google is very important to know what user search to find what his/her want
+**point one :** search for searched word in google is very important to know what user search to find what his/her want
 
 you must prioritize your key word and after that you must show your key words to your customer if your customer confirmed that key words you can use in your prioritization 
+
++ if you wbat to know how many site used (searched word) in their site put your searched word in "" in search google like:
+
+```
+"teach java script"
+```
+
++ if you want to know how many site work on (searched word) in their site use allintitle:"search word" like :
+```
+allintitle:"teach java script"
+```
+
+**point two :** the best place to put your word key is in title and h1
