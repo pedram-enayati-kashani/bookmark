@@ -43,3 +43,41 @@ allintitle:"teach java script"
 ```
 
 **point two :** the best place to put your word key is in title and h1
+
+***
+
+### Structure main page
+
+**point one :** design main page must be simple to user can find every thing that want
+
+**point two :** load speed page is very important
+
+**tag title :** every page must have uniqe title and max character must be 64 and min title sentence must be 3 part
+```html
+<title>teach javascript program</title>
+```
+
+#### meta tag
+
+**meta Description :** this meta explains your page max character must be 160 
+```html
+<meta name="Description" content="explains">
+```
+
+**meta keyword :** this meta became Obsolete and you can i put your keyword in this meta 
+```html
+<meta name="keywords" content="javascript,teach javascript,what is javascript">
+```
+
+#### h1 to h6 tag
+**meta h1 :** your page must have one h1, max and min h1 must be one and h1 content and title content must be different if content became the same this make The importance of the page decreases
+
+**h2 :** don't use very much h2 in page
+
+**h3 to h6 :** use freely
+
+#### a tag
+**a :** is better to be same content a and href and google say link short is better then big href and is better to use short link goo.gl and use attribute title in a , this attribute explain about this link
+
+#### img tag
+**img :** for google is important to use attribute alt and title for img tag , alt show explain about your image if your image doesn't show
