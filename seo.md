@@ -81,3 +81,32 @@ allintitle:"teach java script"
 
 #### img tag
 **img :** for google is important to use attribute alt and title for img tag , alt show explain about your image if your image doesn't show
+
+#### content writing
+**content writing :** must be simple and use image and video in your content to make your content more interesting
+
+#### important page
+
+**in nav you must have :**
+* one part for Products
+* one part for blog
+* one part for services
+* one part for contact-us
+* one part for about-us
+* one part for questions
+
+**contact-us :** is better to put your email and phone and address to Increase customer trust and after send customer email you must send answer for that email
+
+**about-us :** you must write about your site and in the end, agin you must put your email and phone and address in the content
+
+---
+
+### tools
+
+**woorank**
+this tools for analyse your website and suggest to make your seo site better
+
+---
+
+### url
+don't use persian word in url
