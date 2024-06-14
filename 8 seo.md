@@ -101,12 +101,36 @@ allintitle:"teach java script"
 
 ---
 
-### tools
+### tools:
 
 **woorank**
-this tools for analyse your website and suggest to make your seo site better
+this tools for analyze your website and suggest to make your seo site better and you can use once of day
+
+**checkpagerank**
+checkpagerank.net : is a page that give you your page rank
 
 ---
 
 ### url
 don't use persian word in url
+
+---
+### back link
+
+* the url back link that you pub in web content must has related content to content web
+* the web that you put your back link in it's content must has good rating
+* back link must doesn't have **rel = "nofollow"**
+
+---
+### page rank
+page rank is a score that google gives to your page and your score computing of your link to your page and your rank page is between 0 to 10
+
+### Link Exchange
+we can exchange link in dual or triple.
+dual : is mean you have two site that share each other link in their site
+triple : is mean we have three site that A share link to B and B share to C and C share to A
+and if this link being in content it make link Higher value
+
+---
+### Page Authority
+Page Authority is a score that google give you from 0 to 100
