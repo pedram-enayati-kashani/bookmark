@@ -108,17 +108,27 @@ docker images
 
 **rm :** this command delete your image
 ```
-docker image rm ubuntu
+docker image --rm ubuntu
 ```
 
 </br>
 
 **rm -f:** this command delete your image by force
 ```
-docker image rm -f ubuntu
+docker image --rm -f ubuntu
 ```
 
 </br>
+
+---
+
+#### example
+this command run all php content from D:/project/php and copy content this directory to /var/www/html
+```
+docker run -d -p 80:80 --name php -v D:/project/php:/var/www/html php:8.2.20-apache //php
+docker run -d --rm --name mysql -e MYSQL_ROOT_PASSWORD=123456789 -e MYSQL_DATABASE=test -e MYSQL_USER=pedram -e MYSQL_PASSWORD=123456789 -p 3307:3306 mysql:latest //run mysql
+docker run -d --name phpmyadmin -p 8080:80 --link mysql:db --rm phpmyadmin // run phpmyadmin
+```
 
 ---
 

@@ -99,6 +99,12 @@ allintitle:"teach java script"
 
 **about-us :** you must write about your site and in the end, agin you must put your email and phone and address in the content
 
+#### post page
+* content don't be Repetitious
+* use image and video in content
+* content must be interesting and br true
+* content has h tag and img and video has alt and title
+
 ---
 
 ### tools:
@@ -107,7 +113,7 @@ allintitle:"teach java script"
 this tools for analyze your website and suggest to make your seo site better and you can use once of day
 
 **checkpagerank**
-checkpagerank.net : is a page that give you your page rank
+[checkpagerank](https://checkpagerank.net) : is a page that give you your page rank
 
 ---
 
@@ -134,3 +140,38 @@ and if this link being in content it make link Higher value
 ---
 ### Page Authority
 Page Authority is a score that google give you from 0 to 100
+
+---
+#### who.is
+don't lock whois and write your ownership domain
+
+---
+
+#### Improved loading speed
+
+##### tools : 
+**[gtmetrix](https://gtmetrix.com/) :**   
+
+---
+
+#### robots.txt
+
+```
+user-agents: * <!-- All crawlers ... -->
+allow: / <!-- ... are allowed to see all sites -->
+sitemap: https://diesella.ir/sitemap.xml <!-- address sitemap -->
+
+user-agents: *
+Disallow: /project-file/  <!-- robots doesn't allow to index project-file -->
+
+user-agents: Googlebot-Image <!-- robot googlebot don't allowed to ... -->
+Disallow: /Images/logo.png <!-- ... index logo.png -->
+
+user-agents: *
+Disallow: /*.gif$ <!-- robots doesn't allowed to index files.gid -->
+```
+
+##### meta
+``` html
+<meta name="robots" content="nofollow,noindex">  <!-- robots don't follow and don't index this page -->
+```
