@@ -59,7 +59,8 @@ allintitle:"teach java script"
 
 #### meta tag
 
-**meta Description :** this meta explains your page max character must be 160 
+**meta Description :** this meta explains your page max character must be between 160 
+to 300 char
 ```html
 <meta name="Description" content="explains">
 ```
@@ -69,8 +70,13 @@ allintitle:"teach java script"
 <meta name="keywords" content="javascript,teach javascript,what is javascript">
 ```
 
+**meta canonical :** this meta make google robot understand that which one is main url address and don't index another url
+```html
+<meta name="canonical" href="https://diesella.ir">
+```
+
 #### h1 to h6 tag
-**meta h1 :** your page must have one h1, max and min h1 must be one and h1 content and title content must be different if content became the same this make The importance of the page decreases
+**tag h1 :** your page must have one h1, max and min h1 must be one and h1 content and title content must be different if content became the same this make The importance of the page decreases
 
 **h2 :** don't use very much h2 in page
 
@@ -173,5 +179,5 @@ Disallow: /*.gif$ <!-- robots doesn't allowed to index files.gid -->
 
 ##### meta
 ``` html
-<meta name="robots" content="nofollow,noindex">  <!-- robots don't follow and don't index this page -->
+<meta name="robots" content="nofollow,noindex">  <!-- robots don't follow links and don't index this page -->
 ```
