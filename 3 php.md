@@ -270,3 +270,22 @@ with this you can make a warning or fatal error
 ```php
 trigger_error("Fatal error", E_USER_ERROR);
 ```
+
+#### curl php
+It is one of the most popular php libraries. with curl you can use some of protocol like : ftp, http, ...
+* use for api
+* fill html forms automatically
+```php
+$ch = curl_init(); /* install curl or initialize curl */
+$url = 'http://localhost/telegramRobot/post.php';
+curl_setopt($ch,CURLOPT_URL,$url); /* open url */
+curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Macintosh; Intel Max OS X)'); /* set useragent */
+curl_setopt($ch,CURLOPT_TIMEOUT,10000); /* set max time for read data and default time is 0 */
+curl_setopt($ch,CURLOPT_POST,true); /* post data */
+curl_setopt($ch,CURLOPT_POSTFIELDS,"email=pedram.en1376@gmail.com&&password=1234"); /* fill inputs in string */
+curl_setopt($ch,CURLOPT_RETURNTRANSFER,true); /* return data in string */
+curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,true); /* check the ssl url exist */
+curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,true); /* check the ssl is valid or not */
+$result = curl_exec($ch); /* execute data */
+curl_close($ch); /* close curl */
+```

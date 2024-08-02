@@ -20,5 +20,3 @@ https://api.telegram.org/bot<token>/sendMessage?chat_id=254133636&text=Hello+wor
 
 [dummy rest api example](https://dummy.restapiexample.com/)
 [json placeholder typicode](https://jsonplaceholder.typicode.com/)
-
-#### curl php
