@@ -171,3 +171,177 @@ const Counter = ({count})=>{
 
 #### state
 when we want add data , edit date , delete data in component we use state 
+
+**stateFull :** state full follow data and changed data
+```js
+class Main extends Component {
+ constructor() {
+   super()
+   this.state = {
+     books: []
+   }
+ }
+ render() {
+   <BooksList books={this.state.books} />
+ }
+}
+
+or
+
+class App extends Component {
+
+    state = {
+        count: 0,
+        name: "Younes",
+        family: "Ghorbany"
+    }
+
+    changeState() {
+        this.setState({count: 5});
+    }
+
+    render() {
+        let {count, name, family} = this.state;
+        // count = 5;
+
+        return (
+            <div>
+                <header>
+                    <h1>شمارنده من</h1>
+                </header>
+                <p>{count}</p>
+                <p>{name}</p>
+                <p>{family}</p>
+
+            </div>
+        )
+    }
+}
+
+
+```
+
+**state less :** state less show data that send from props
+```js
+const BooksList = ({books}) => {
+ return (
+   <ul>
+     {books.map(book => {
+       return <li>book</li>
+     })}
+   </ul>
+ )
+}
+```
+
+#### bind
+By default, the class method does not have access to this
+```js
+
+import {Component} from "react";
+
+class Counter extends Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            name: "یونس"
+        }
+
+        // this.changeName = this.changeName.bind(this);
+    }
+
+    // changeName() {
+    //     this.setState({name: "سجاد"})
+    // }
+
+    changeName = () => {
+        this.setState({name: "سجاد"})
+    }
+
+    render() {
+        return (
+            <div>
+                <p>{this.state.name}</p>
+                <button onClick={this.changeName}>تغییر نام</button>
+            </div>
+        )
+    }
+}
+
+export default Counter;
+```
+
+#### Style
+
+```js
+
+const myStyle = {color:'red',border:'1px solid red'};
+// inline style
+
+return (
+    <div className="my-style"></div>
+
+    or
+
+    <div style={{color:'red',border:'1px solid red'}}></div>
+
+    or
+
+    <div style={myStyle}></div>
+);
+
+```
+
+#### React Fragment
+when we want return some element in a component we use React Fragment we use this because when we want create some element in react that's element must be in one parents element 
+
+```jsx
+
+<div>
+    <h3>Contacts</h3>
+</div>
+
+or
+
+<React.Fragment> /* we use this instead of div */
+    <h3>Contacts</h3>
+</React.Fragment>
+
+/* for use */ 
+
+import React from "react";
+
+const Contacts = ()=>{
+    return (
+        <React.Fragment>
+            <h3>Contacts</h3>
+        </React.Fragment>
+    );
+}
+
+or
+
+import {Fragment} from "react";
+
+const Contacts = ()=>{
+    return (
+        <Fragment>
+            <h3>Contacts</h3>
+        </Fragment>
+    );
+}
+
+or
+
+import {Fragment} from "react";
+
+const Contacts = ()=>{
+    return (
+        <>
+            <h3>Contacts</h3>
+        </>
+    );
+}
+```
