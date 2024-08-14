@@ -1,5 +1,8 @@
 ### React
 
+#### state
+state is a object and save component dynamic data in system memory
+
 #### Imperative programming :
 when you create tag , change tag , or set styled for tag in other you access to your document tags with dom
 
@@ -345,3 +348,72 @@ const Contacts = ()=>{
     );
 }
 ```
+
+#### Link
+```jsx
+import {Link} from "react-router-dom";
+
+// with this you can create a link without refresh
+<Link style={{ display: "block" }} to={`/books/${book.number}`} key={book.number}>
+    {book.name}
+</Link>
+```
+
+#### navLink
+is exactly link link but you can add feature to link like active hover 
+```jsx
+    <NavLink
+        style={({isActive}) => {
+            return {
+                display : "block",
+                margin : "1rem 0",
+                color: isActive ? "red" : "",
+            }
+        }}
+        to={`/books/${book.number}${location.search}`}
+        key={book.number}
+    >
+        {book.name}
+    </NavLink>
+```
+
+#### Routes
+
+```jsx
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+
+/* when we want use route must nest <Route> in <Routes> */
+<Routes>
+/* when we want nest a Route in another Route ... */
+    <Route path="/" element={<App/>}> 
+        <Route path="/about" element={<About/>}/>  
+        <Route path="/books" element={<Books/>}>
+            <Route index element={
+                <main style={{padding:'1rem'}}>
+                    <p>کتاب مورد نظر خود را قرار بدید</p>
+                </main>
+            }/>
+            <Route path="/books/:bookId" element={<Book/>} />
+        </Route>
+        // this route is mean if url route didn't exist active button route  
+        <Route path="*" element={
+                <main style={{padding:"1rem"}}>
+                    <p>گشتم نبود نگرد نیست</p>
+                </main>
+            } />
+    </Route>
+</Routes>
+```
+
+#### React life cycle
+React life cycle include of
+* Initialization component and given Props and default state
+* render component
+* update component
+* destroy component
+
+#### Hook
+Hook is a funtion that let us use React life cycle in component without use class function
+
+* **useSearchParams :** this exactly like state but Instead of save date in system memory it save date in url
+* **useLocation :** give us info from url
