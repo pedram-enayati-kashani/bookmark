@@ -289,3 +289,14 @@ curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,true); /* check the ssl is valid or not *
 $result = curl_exec($ch); /* execute data */
 curl_close($ch); /* close curl */
 ```
+
+#### Clojure function
+clojure function other mean is Anonymous functions
+```php
+$greet = function($name) {
+    printf("Hello %s\r\n", $name);
+};
+
+$greet('World');
+$greet('PHP');
+``` 

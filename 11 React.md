@@ -417,3 +417,4 @@ Hook is a funtion that let us use React life cycle in component without use clas
 
 * **useSearchParams :** this exactly like state but Instead of save date in system memory it save date in url
 * **useLocation :** give us info from url
+* **useNavigate :** it's use to redirect user to new page 
