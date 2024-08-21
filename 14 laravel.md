@@ -46,4 +46,19 @@ Route::match(['get','post'],'/',function (){
 Route::any('/',function (){
     return view('welcome');
 });
+
+// add id or value to route
+Route::any('/{id}',function ($id){
+    return $id;
+});
+
+// id is optional can exist or not
+Route::any('/{id?}',function ($id = 1){
+    return $id;
+});
+
+// add regular expression to route with method where
+Route::get('/{id}',function ($id){
+    return $id;
+})->where('id','[1-9]');
 ```
