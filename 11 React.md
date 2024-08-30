@@ -415,6 +415,211 @@ React life cycle include of
 #### Hook
 Hook is a funtion that let us use React life cycle in component without use class function
 
-* **useSearchParams :** this exactly like state but Instead of save date in system memory it save date in url
-* **useLocation :** give us info from url
-* **useNavigate :** it's use to redirect user to new page 
+**useSearchParams :** this exactly like state but Instead of save date in system memory it save date in url
+```jsx
+```
+**useLocation :** give us info from url
+```jsx
+```
+**useNavigate :** it's use to redirect user to new page 
+```jsx
+import {Routes,Route,Navigate} from "react-router-dom";
+
+<Routes>
+    <Route path="/" element={<Navigate to="/contacts"/>}/>
+    <Route path="/contacts" element={<Contacts contacts={getContacts} loading={loading}/>}/>
+</Routes>
+```
+
+#### The Component Lifecycle
+**NOTE Mounting LifeCycle in class component :**
+* constructor()
+* static getDerivedStateFromProps(props,state)
+* render()
+* componentDidMount()
+
+```jsx
+import {Component} from "react";
+import './App.css';
+
+class App extends Component {
+  //   first
+  constructor() {
+    super();
+    console.log("App.js - constructor()");
+    this.state = {date: new Date(),showClock : true, color:false};
+  }
+    //   second
+  static getDerivedStateFromProps(props,state){
+      console.log("App.js - getDerivedStateFromProps()");
+      return state;
+  }
+
+    //   forth
+  componentDidMount() {
+    console.log("App.js - componentDidMount()");
+    this.timer = setInterval(()=> this.tick(),1000);
+  }
+
+  tick(){
+      this.setState({date: new Date()});
+  }
+
+    //   third
+  render(){
+    console.log("App.js - render()");
+    return (
+        <div className="App">
+          <p>سلام دوست عزیز</p>
+          <p>ساعت در حال حاظر برابر : {this.state.date.toLocaleTimeString()}</p>
+        </div>
+    );
+  }
+}
+
+export default App;
+
+```
+
+**NOTE Mounting LifeCycle in class components :**
+
+```jsx
+
+/* file App.js */
+
+import {Component} from "react";
+import './App.css';
+import Clock from "./components/Clock";
+
+/*
+* // NOTE Mounting LifeCycle in class components
+* constructor()
+* static getDerivedStateFromProps(props,state)
+* render()
+* componentDidMount()
+* */
+
+class App extends Component {
+  //   first
+  constructor() {
+    super();
+    console.log("App.js - constructor()");
+    this.state = {date: new Date(),showClock : true, color:false};
+    this.clockChange = this.clockChange.bind(this);
+    this.colorChange = this.colorChange.bind(this);
+  }
+    //   second
+  static getDerivedStateFromProps(props,state){
+      console.log("App.js - getDerivedStateFromProps()");
+      return state;
+  }
+
+    //   forth
+  componentDidMount() {
+    console.log("App.js - componentDidMount()");
+    this.timer = setInterval(()=> this.tick(),1000);
+  }
+
+  tick(){
+      this.setState({date: new Date()});
+  }
+
+  componentWillUnmount(){
+      console.log("App.js - componentWillUnmount()");
+      clearInterval(this.timer);
+  }
+
+  clockChange(){
+      this.setState({showClock : !this.state.showClock});
+  }
+
+  colorChange(){
+      this.setState({color:!this.state.color});
+  }
+
+    //   third
+  render(){
+    console.log("App.js - render()");
+    const {date,showClock,color} = this.state;
+    return (
+        <div className="App">
+          <p>سلام دوست عزیز</p>
+            {
+                showClock ? (
+                    <Clock date={date} color={color}/>
+                ) : null
+            }
+            <hr/>
+            <button onClick={this.clockChange}>نمایش ساعت</button>
+            <button onClick={this.colorChange}>تغییر رنک</button>
+        </div>
+    );
+  }
+}
+
+export default App;
+
+/********* file Clock.jsx ***********/
+
+import {Component} from "react";
+
+/*
+* // Note update lifeCycle
+* - static getDerivedStateFromProps(props,state)
+* - shouldComponentUpdate(nextProps,nextState);
+* - render()
+* - getSnapshotBeforeUpdate(prevProps,prevState);
+* - componentDidUpdate();
+* */
+
+class Clock extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+        console.log("Clock.jsx - constructor()");
+    }
+
+    static getDerivedStateFromProps(props,state){
+        console.log("Clock.jsx - getDerivedStateFromProps()");
+        return state;
+    }
+
+    shouldComponentUpdate(nextProp,nextState){
+        console.log("Clock.jsx - shouldComponentUpdate()");
+        return this.props.date !== nextProp.date;
+    }
+
+    componentDidMount() {
+        console.log("Clock.jsx - componentDidMount()");
+    }
+
+    componentWillUnmount(){
+        console.log("Clock.jsx - componentWillUnmount()");
+    }
+
+    getSnapshotBeforeUpdate(prevProps,prevState){
+        console.log("Clock.jsx - getSnapshotBeforeUpdate()");
+        return {prevProps,prevState}
+    }
+
+    componentDidUpdate(prevProps,prevState,snapshot){
+        console.log("Clock.jsx - componentDidUpdate()");
+        console.log(snapshot);
+    }
+
+    render(){
+        console.log("Clock.jsx - render")
+        const {date,color} = this.props;
+        const style = {
+            color: color ? "tomato" : "black",
+        }
+        return (
+            <>
+                <p style={style}>ساعت در حال حاظر برابر : {date.toLocaleTimeString()}</p>
+            </>
+        );
+    }
+}
+
+export default Clock;
+```
