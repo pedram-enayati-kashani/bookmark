@@ -61,4 +61,18 @@ Route::any('/{id?}',function ($id = 1){
 Route::get('/{id}',function ($id){
     return $id;
 })->where('id','[1-9]');
+
+// if route in your web doesn't exist this route activate
+Route::fallback(function (){
+   return 'hi';  
+});
+```
+
+#### view
+```php
+Route::get('/',function (){
+    //return view('welcome')->with('var','test');
+    // return view('welcome',['var'=>'test']);
+    return view('welcome',compact('var'));
+});
 ```

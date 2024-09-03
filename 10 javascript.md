@@ -20,6 +20,14 @@ function increment() {
 }
 ```
 
+##### Anonymous function
+```js
+return () => {
+  console.log("Anonymous function");
+}
+
+```
+
 ### Array function
 
 #### find
