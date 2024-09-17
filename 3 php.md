@@ -300,3 +300,8 @@ $greet = function($name) {
 $greet('World');
 $greet('PHP');
 ``` 
+
+#### all error
+* 403 : Pages that are prohibited for the user
+* 404 : pages that not exist
+* 500 : server error

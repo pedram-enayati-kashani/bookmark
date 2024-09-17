@@ -5,10 +5,13 @@
 #### server
 ```
 // in default port server is 8000
-home php artisan serve
+php artisan serve
 
 // add your port
-home php artisan serve --port=9000 
+php artisan serve --port=9000 
+
+// show all of route created in your project
+php artisan route:list
 ```
 
 #### migratian
@@ -66,6 +69,12 @@ Route::get('/{id}',function ($id){
 Route::fallback(function (){
    return 'hi';  
 });
+
+// add controller to Route
+Route::get('/', [HomeController::class, 'index']);
+
+// it make all CRUD route 
+Route::resource('photos', PhotoController::class);
 ```
 
 #### view
@@ -75,4 +84,48 @@ Route::get('/',function (){
     // return view('welcome',['var'=>'test']);
     return view('welcome',compact('var'));
 });
+```
+
+#### Controller
+```php
+php artisan make:controller NameController /* create controller with command */
+
+php artisan make:controller NameController --resource /* this command create a controller for CRUD */
+
+php artisan make:controller NameController --invokable /* this command create a controller for performs one action */
+```
+
+#### all http method
+```
+get
+post
+put : for update all model
+patch : for update attribute
+delete
+```
+
+#### Helper Method
+```php
+
+    dd($value) /* show all value and info in variable */
+
+    abort(404,'message for error') /* make a error */
+```
+
+#### error view
+with bottom command you can access to error view in views directory
+```
+php artisan vendor:publish --tag=laravel-errors
+```
+
+#### write test
+**it has two directory**
+* feature : test for big project
+* unit : test for small project
+
+```php
+php artisan make:test UserTest /* command create test */
+./vendor/bin/phpunit /* run php unit */
+./vendor/bin/pest /* run php unit */
+./vendor/bin/pest --filter firstTest /* run special test */
 ```

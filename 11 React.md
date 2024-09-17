@@ -432,23 +432,29 @@ import {Routes,Route,Navigate} from "react-router-dom";
 ```
 
 **useEffect :**
-let us use lifeCycle in function
+let's us use lifeCycle in function
+**we can use useEffect for :**
+* create component
+* update component
+* delete component
 ```jsx
 import {useEffect} from "react";
 
 const SecondClock = ({date,color}) =>{
 
+    /* run for everyone */
     // useEffect(()=>{
     //     console.log("secondClock.jsx - Mount useEffect()");
     // });
 
+    /* run just for mount and run just for once*/
     useEffect(()=>{
         console.log("secondClock.jsx - Mount useEffect()");
         return () => {
             console.log("secondClock.jsx - Unmount useEffect()");
         }
     },[]);
-
+    /* run when color props changed */
     useEffect(()=>{
         console.log("secondClock.jsx - Update useEffect()");
     },[color]);
@@ -657,4 +663,15 @@ class Clock extends Component {
 }
 
 export default Clock;
+```
+
+#### React ES6 Spread Operator
+The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
+```js
+const numbersOne = [1, 2, 3];
+const numbersTwo = [4, 5, 6];
+const numbersCombined = [...numbersOne, ...numbersTwo];
+document.write(numbersCombined);
+
+output = 1,2,3,4,5,6
 ```
