@@ -172,6 +172,11 @@ const Counter = ({count})=>{
 }
 ```
 
+**props drilling**
+it means when we don't use props in component and just send to another component
+
+---
+
 #### state
 when we want add data , edit date , delete data in component we use state 
 
