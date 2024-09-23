@@ -680,3 +680,30 @@ document.write(numbersCombined);
 
 output = 1,2,3,4,5,6
 ```
+
+#### create json-server
+
+**first :** create a directory with name server
+**second :** go in directory with command ``cd server``
+**third :** write command ``npm init -y`` this command add package.json in directory server
+**forth :** write command ``npm i json-server`` this command install json server
+**fifth :** create a file db.json in server directory
+**sixth :** go to package.json and add start:
+```
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start" : "json-server --watch db.json -p 9000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.2"
+  }
+}
+
+```
