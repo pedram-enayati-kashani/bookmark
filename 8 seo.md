@@ -10,7 +10,7 @@ follow the exist link in website and collect info in link and save that info in 
 
 **point one :** if you want google crawler see your website faster you must give your domain to a high traffic website in this way crawler can find you faster 
 
-**onpage** = is a link that exist in your website
+**onpage** = the thing you put to your site that user see
 
 **ofpage** = is a your link that exist in other website  
 
@@ -31,7 +31,7 @@ follow the exist link in website and collect info in link and save that info in 
 
 you must prioritize your key word and after that you must show your key words to your customer if your customer confirmed that key words you can use in your prioritization 
 
-+ if you wbat to know how many site used (searched word) in their site put your searched word in "" in search google like:
++ if you want to know how many site used (searched word) in their site put your searched word in "" in search google like:
 
 ```
 "teach java script"
@@ -52,7 +52,7 @@ allintitle:"teach java script"
 
 **point two :** load speed page is very important
 
-**tag title :** every page must have uniqe title and max character must be 64 and min title sentence must be 3 part
+**tag title :** every page must have unique title and max character must be 64 and min title sentence must be 3 part
 ```html
 <title>teach javascript program</title>
 ```
@@ -123,6 +123,21 @@ this tools for analyze your website and suggest to make your seo site better and
 
 ---
 
+#### favorite link in seo :
+
+google know when you make a questions how search every title seo to answer your questions so you can search that questions and put to your title in your content post and put that questions in ht tag but **don't overdo it**
+
+---
+
+#### make link:
+create link in same content has more effect and also, the older this link is, the more effective it is.
+
+---
+#### Links that are not valid:
+* attribute rel has nofollow
+* attribute target has _blank
+---
+
 ### url
 don't use persian word in url
 
@@ -147,16 +162,35 @@ and if this link being in content it make link Higher value
 ### Page Authority
 Page Authority is a score that google give you from 0 to 100
 
+site:{address your site} => for see how many link google indexed  
+
 ---
+#### onPage :
+seo in inside of site is mean in program
+
+**domain site :** what is a good domain extension? what is your competition?
+* .com : for com abbreviation of companies and For commercial work
+* .net : for network
+* .co : for companies
+
+#### offPage :
+seo outside of site
+
+---
+
 #### who.is
 don't lock whois and write your ownership domain
 
+**important point :** 
 ---
+
+
 
 #### Improved loading speed
 
 ##### tools : 
 **[gtmetrix](https://gtmetrix.com/) :**   
+analyze seo site 
 
 ---
 
@@ -177,7 +211,10 @@ user-agents: *
 Disallow: /*.gif$ <!-- robots doesn't allowed to index files.gid -->
 ```
 
-##### meta
+### meta tag
 ``` html
 <meta name="robots" content="nofollow,noindex">  <!-- robots don't follow links and don't index this page -->
 ```
+
+**point one :** Separate the title field and the h1 field.
+
