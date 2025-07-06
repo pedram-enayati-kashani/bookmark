@@ -19,6 +19,17 @@ out = {
 }
 ```
 
+#### Parameter
+to input function php we say parameter example :
+```php
+function php($input,$output){
+
+}
+// input and out put are parameter
+```
+
+
+
 #### **dirname()**
 return parents path
 ```php

@@ -215,6 +215,55 @@ Disallow: /*.gif$ <!-- robots doesn't allowed to index files.gid -->
 ``` html
 <meta name="robots" content="nofollow,noindex">  <!-- robots don't follow links and don't index this page -->
 ```
-
 **point one :** Separate the title field and the h1 field.
 
+**meta description :** There is a brief explanation for the page. put word between 160 to 300 characters
+```html
+<meta name="description" content="">
+```
+
+**meta canonical :** You specify the main address of the page.
+```html
+<meta name="canonical" content="https://toplean.com">
+```
+**attribute alt :** put word between 16 to 50 characters it's better to max be 16 characters
+```html
+<img sec="" alt="">
+```
+
+### search analytics
+
+* click: how many clicked
+* impressions: how many show in search google
+* ctr (click to rate): Shows average impressions and clicks.
+* position: show where is in search google 1.2 ( 1:page one 2:The second option)
+
+---
+
+### links
+**External links :** other site that link to your site
+* Top linked pages: top the links that other make for you
+* Top linking sites: the sites that make a link for you
+* Top linking text: the text that set in anchor like `<a>text</a>`
+
+**Internal links :** the links that you make in your site
+
+---
+
+### Manual actions
+if your site is identified as spam. google will tell you what happened and how to fix it.
+
+---
+
+### Structure data 
+ * schema.org : example for Structure schema
+
+ ---
+
+ ### Demographic details
+ Reporting for user age and gender
+
+ ---
+
+ ### Campaigns url builder
+for create promotional links
