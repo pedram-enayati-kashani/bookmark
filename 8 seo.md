@@ -1,4 +1,9 @@
-# *seo*
+<style>
+    .green{
+        color:#268065;
+    }
+</style>
+# seo
 
 **Search Engine google :**
 Search Engine google work in two way one with crawler and two with algorithm
@@ -267,3 +272,113 @@ if your site is identified as spam. google will tell you what happened and how t
 
  ### Campaigns url builder
 for create promotional links
+
+---
+
+### Off Page
+seo of page divine in two :
+* make link
+* make a brand
+
+**<span class="green">There are three methods for off page.</span>**
+* white hats
+* gray hats
+* black hats
+
+the most important factor for make brand is user go to main page website
+
+[gs.statcounter](https://gs.statcounter.com/)
+
+---
+
+### google penalty
+
+* algorithm penalty : with change algorithm
+* manual penalty : stop see your domain in google search
+
+---
+
+### google algorithm
+
+algorithm divine in two part
+* some algorithm be saved in main core of google search
+* some for detect spam and improve the display of search results used by users
+
+algorithm :
+* **panda algorithm :** Calm and reader, Content quality is a priority.Its job is to read the content and identify the worthless content so that it cannot be used to score search engine rankings using keywords. and hates ads in between content.
+
+* **penguin algorithm** Intimate and hates keywords and introverted. Its job is to identify links and remove spam links.
+
+* **Hummingbird algorithm :** Fast and serious, it's job is to search for meaning.
+
+* **zebra algorithm :** passionate about shopping and sensitive and easily offended, Responsible for monitoring online stores and And prevent online store fraud
+
+* **pigeon algorithm :** Interested in familiar places and advocates peace and friendship. 
+
+* **page layout algorithm :** Hates too much advertising. Hates too many ads, fights, fines, and is strict and saves the user, preventing the user from entering sites full of ads.
+
+* **color frame algorithm :** It looks like a hummingbird, but smarter and more intelligent.
+
+* **payday algorithm :** To prevent sites that use keywords to lure users to their own sites. and review content that uses the keyword
+
+* **page authority algorithm :** Its job is to determine the rank and quality of your site. It gives you points based on the number of visits, site popularity, number of inbound links, content quality, and the amount of time users spend on your site.
+
+* **Caffeine google algorithm :** Pays a lot of attention to social networks.
+
+---
+
+### SEM
+search engin marketing
+
+---
+
+### Reportage
+Writing names or linking to your site from high-traffic sites will increase your score.
+
+* for make brand your web you can make a link with your website name ore you can just text your website name
+* with banner in a tag with your website address, your point of seo increase
+
+<span class="green">**point**</span> : when you put your link in some section then that section repeat show in every page of site you must make that link nofollow if you not google give you penalty
+
+<span class="green">**point**</span> : before index page don'nt click on your make link
+
+**ugc** : it means this site control by users
+
+---
+
+### first two month
+
+
+----
+
+### Make link
+
+rel:
+* follow
+* nofollow
+* alternate : is mean reference
+* next : is mean Continuation of the previous link
+
+---
+
+### img
+
+* Defining keywords in alt 
+* Defining keywords in name address
+* Defining keywords in title a tag
+
+```html
+<a title="">
+    <img src="" alt="">
+</a>
+```
+
+### how many site link is indexed
+```
+site:your domain.com
+```
+---
+
+### Best Link
+best link is that are in text and don't make link in a space in near of some link
+

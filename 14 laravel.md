@@ -1,5 +1,7 @@
 ## laravel
 
+## version 5.8
+
 ### artisan
 
 #### server
@@ -71,10 +73,13 @@ Route::fallback(function (){
 });
 
 // add controller to Route
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', 'HomeController@index');
 
 // it make all CRUD route 
-Route::resource('photos', PhotoController::class);
+Route::resource('photos', 'PhotoController');
+
+// it's like resource but don't make route get for update and create
+Route::apiResource('photos', 'PhotoController');
 ```
 
 #### view
@@ -104,6 +109,52 @@ patch : for update attribute
 delete
 ```
 
+#### See All Of Your Route
+```php
+php artisan route:list
+```
+
+#### Redirect
+
+```php
+// helper
+Route::get('redirect-with-helper', function(){
+    return redirect()->to('category/create');
+});
+
+// shortcut
+Route::get('redirect-with-shortcut', function(){
+    return redirect('category/create');
+});
+
+// fasade
+Route::get('redirect-with-fasade', function(){
+    return Redirect::to('category/create');
+});
+
+// fasade
+Route::redirect('redirect-with-fasade2','category');
+
+// route name
+Route::get('redirect', function(){
+    return redirect()->route('category/create');
+});
+
+// route with parameter
+Route::get('redirect', function(){
+    return redirect()->route('category/create',['id'=>1]);
+});
+
+// route with parameter
+Route::get('redirect', function(){
+    return redirect()->back();
+});
+
+Route::get('redirect', function(){
+    return redirect()->with("seesion name","value");
+});
+```
+
 #### Helper Method
 ```php
 
@@ -129,3 +180,21 @@ php artisan make:test UserTest /* command create test */
 ./vendor/bin/pest /* run php unit */
 ./vendor/bin/pest --filter firstTest /* run special test */
 ```
+---
+
+#### Local SEO
+some time you want to make seo of some site that show it's address in that site you can set link in directory like guc site , form, google place,yahoo search, bing, ublo, ...
+
+---
+
+### @blade
+
+#### forelse
+```php
+@forelse($users as $user)
+    {{ $user }}
+@empty
+    {{ "no user }}
+@endforelse
+```
+
