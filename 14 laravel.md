@@ -198,3 +198,55 @@ some time you want to make seo of some site that show it's address in that site 
 @endforelse
 ```
 
+#### @extend()
+mother layouts
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>@yield('title')</title>
+    </head>
+    <body>
+        @yield('content')
+        @yield('content2',view::make('view.name')) //with this you can pass a view in yield
+        @section('script')
+            <script>alert('hi')</script>
+        @show
+    </body>
+</html>
+```
+
+#### @section and extends
+Inheritance
+
+```php
+@extends('layout.master')
+@section('title','test')
+
+// in master layout section end with show but in Inheritance section end with endsection
+@section('content')
+    this is content
+@endsection
+
+@section('scripts')
+    @parents
+    <script>alert('hi2')</script>
+@endsection
+```
+
+#### @include 
+for add new section in Inheritance
+```php
+@section('content')
+    this is content
+    @include('error')
+    @includeIf('error') //is check if file exist load file
+    @includeWhen($boolean,'error') //is check if file exist load file
+@endsection
+```
+
+#### @each
+```php
+@each("error",$projects,'project','error-none')
+```
