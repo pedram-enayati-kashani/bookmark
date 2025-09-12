@@ -1,4 +1,4 @@
-## laravel
+# laravel
 
 ## version 5.8
 
@@ -34,7 +34,7 @@ facade is mean structure view
 Route::get();
 ```
 
-#### Route
+### Route
 laravel route Method has Get,Post,Put,Delete,Match,any
 
 ```php
@@ -82,7 +82,7 @@ Route::resource('photos', 'PhotoController');
 Route::apiResource('photos', 'PhotoController');
 ```
 
-#### view
+### view
 ```php
 Route::get('/',function (){
     //return view('welcome')->with('var','test');
@@ -250,3 +250,71 @@ for add new section in Inheritance
 ```php
 @each("error",$projects,'project','error-none')
 ```
+
+#### @json
+
+```php
+    <script>
+        let app = <?php echo json_encode($array); ?>;
+        let app = @json($array);
+    </script>
+```
+
+#### @slot and @component
+
+```php
+    // Inheritance
+    @component('layouts.partials.button')
+        @slot('color')
+            danger
+        @endslot
+        @slot('text')
+            خطا
+        @endslot
+    some text
+    @endcomponent
+```
+
+```php
+    // component file
+    <div class="">
+        <button type="button" class="btn btn-{{ $color }}">{{ $text }}</button>
+        <p>{{ $slot }}</p>
+    </div>
+```
+
+### provider
+
+```php
+php artisan make:provider TestServiceProvider
+```
+
+### composer
+
+```php
+// provider file boot
+// for register config\app.php
+view()->composer('layouts.master',function($view){
+    $view->with('count',5);
+});
+
+view->composer('layouts.master',\App\Http\View\Composers\TestComposer::class);
+
+view->composer(['layouts.master','layouts.header'],\App\Http\View\Composers\TestComposer::class);
+
+view->creator('layouts.master',\App\Http\View\Composers\TestComposer::class);
+
+
+// TestComposer file
+namespace App\Http\View\Composers;
+
+use Illuminate\Contracts\View\View;
+
+class TestComposer{
+    public function composer(View $view){
+        $view->with('count',5);
+    }
+}
+
+```
+
