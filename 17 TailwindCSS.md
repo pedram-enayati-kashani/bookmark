@@ -8,7 +8,12 @@ npm install -D tailwindcss@3.2.4 postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-*for compile*
+**for compile**
 ```
 npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+```
+
+**for minify**
+```
+npx tailwindcss -o build.css --minify
 ```

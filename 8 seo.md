@@ -382,3 +382,14 @@ site:your domain.com
 ### Best Link
 best link is that are in text and don't make link in a space in near of some link
 
+---
+
+### Local SEO
+
+in local seo in opposite of normal seo you can add your link in directories GUC,comment, form, ...
+you should add your link in this sites :
+* [local yahoo](https://local.yahoo.com/)
+* [bing](https://www.bing.com/)
+* [google places](https://google.com/places)
+* [divar](https://divar.ir/)
+* [sheypoor](https://www.sheypoor.com/)

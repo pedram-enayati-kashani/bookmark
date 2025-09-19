@@ -1,4 +1,54 @@
-### React
+# React
+
+### terminal
+```
+npm start // create a server for load
+
+ctrl + c // close server
+```
+
+### component function
+in component first name character start with uppercase
+```js
+function Hello()
+{
+    return (
+        <div>hello world</div>
+    );
+}
+```
+
+### React Rule
+* Instead of class, use **className** because class is reserved in javascript
+* Root Element in component use one div for root don't use multi div in component
+```jsx
+function Hello() // this don't correct
+{
+    return (
+        <div>hello world</div>
+        <div>content</div>
+    );
+}
+
+function Hello() // this correct
+{
+    return (
+        <div>
+            <div>hello world</div>
+            <div>content</div>
+        </div>
+    );
+}
+```
+* for use comment in component put comment in {/* comment */}
+* in single element you must put slash in end of tag
+```html
+<input /> // this correct
+
+<input> // this don't correct
+```
+
+**point :** jsx is mean javascript xml
 
 #### state
 state is a object and save component dynamic data in system memory

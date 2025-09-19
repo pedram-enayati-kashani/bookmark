@@ -283,6 +283,54 @@ for add new section in Inheritance
     </div>
 ```
 
+#### @inject
+with inject you can inject class to view
+```php
+@inject('car','App\Car');
+```
+
+#### make directive Blade
+first go to provider in the boot write
+```php
+Blade::directive('ifGuest',function(){ //in provider
+    return "<?php if(Auth()->guest()); ?>";
+});
+
+@ifGuest // in view
+
+Blade::directive('like',function($like){ //in provider
+    return "<?php if($like); ?>";
+});
+
+@like($like) // in view
+
+```
+
+### stack and push
+```php
+// master file
+
+@stack('css')
+
+// Inheritance file
+@push('css')
+ <link rel="stylesheet" href="example.css">
+@endpush
+```
+
+### @prepend
+
+```php
+// master file
+
+@stack('css')
+
+// Inheritance file put in first line
+@prepend('css')
+ <link rel="stylesheet" href="example.css">
+@prepend
+```
+
 ### provider
 
 ```php
@@ -318,3 +366,25 @@ class TestComposer{
 
 ```
 
+### migration and data base
+for config date base you go to the .env file part connection = mysql
+
+```php
+php artisan migrate // create all migration table in database
+
+php artisan migrate::rollback // roll back one one step back
+
+php artisan migrate::rollback --step=2 // chose the last two batch
+
+php artisan migrate::status // show all of your migration with their status
+
+php artisan migrate::reset // drop all of your migration
+
+php artisan migrate::refresh // drop all of your migration and install all of your migration
+
+php artisan migrate::fresh // drop all of your migration and install all of your migration
+
+php artisan make:migration create_articles_table --create=articles // create a migration table
+
+php artisan make:migration add_images_to_articles_table --table=articles // add or edit some thing in table
+```
