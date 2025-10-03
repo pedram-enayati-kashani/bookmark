@@ -28,7 +28,7 @@ return () => {
 
 ```
 
-### Array function
+### Array function method
 
 #### find
 find make a loop and return one array value
@@ -82,7 +82,7 @@ function myFunction(num) {
 </script>
 ```
 
-#### Scop
+### Scop
 
 **1.scope(block-function-global)**
 ```js
@@ -158,7 +158,7 @@ function myFunc()
 }
 ```
 
-#### Javascript Class
+### Javascript Class
 
 **class**
 ```js
@@ -249,4 +249,22 @@ demo.innerHTML += person3.bio();
 
 // person1.method2(5,7);
 
+```
+
+### Object Destructuring
+this exist in es6
+```js
+// Create an Object
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50
+};
+
+// Destructuring
+let {firstName, lastName} = person;
+
+// Display Primitive Values
+document.getElementById("demo").innerHTML =
+firstName + " " + lastName;
 ```

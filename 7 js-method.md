@@ -27,3 +27,15 @@ function textHeight(item){
     }
 }
 ```
+
+**point :** write clg and vscode make console.log
+```js
+clg // make console.log
+rqr // require
+```
+
+### JSON
+```js
+JSON.stringify() // change object and array to json
+
+```

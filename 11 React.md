@@ -7,17 +7,6 @@ npm start // create a server for load
 ctrl + c // close server
 ```
 
-### component function
-in component first name character start with uppercase
-```js
-function Hello()
-{
-    return (
-        <div>hello world</div>
-    );
-}
-```
-
 ### React Rule
 * Instead of class, use **className** because class is reserved in javascript
 * Root Element in component use one div for root don't use multi div in component
@@ -49,6 +38,23 @@ function Hello() // this correct
 ```
 
 **point :** jsx is mean javascript xml
+
+### component function
+in component first name character start with uppercase
+```js
+function Hello()
+{
+    return (
+        <div>hello world</div>
+    );
+}
+```
+
+#### export
+for access to the code file that function writhed in we must export that function
+```jsx
+
+```
 
 #### state
 state is a object and save component dynamic data in system memory
@@ -129,7 +135,7 @@ class MyApp extends Component{
 class Counter extends Component{
     
     constructor() {
-        super();
+        super(); //for extends constructor Counter from constructor Component
     }
     
     render() {

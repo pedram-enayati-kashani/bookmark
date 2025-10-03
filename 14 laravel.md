@@ -388,3 +388,27 @@ php artisan make:migration create_articles_table --create=articles // create a m
 
 php artisan make:migration add_images_to_articles_table --table=articles // add or edit some thing in table
 ```
+
+### Seeders and Factories
+for create fake record on database
+```php
+php artisan make:seeder UsersTableSeeder // create face users
+
+php artisan db:seed --class=UsersTableSeeder // run seeder class UsersTableSeeder
+
+php artisan migrate --seed // run migrate and seed
+
+php artisan make:factory PostFactory
+
+```
+
+**point :** if you want create persian fake name goto config/app.php and search faker_locale and edit
+```php
+"faker_locale" => "fa_IR"
+```
+
+### Modal
+
+```php
+php artisan make:modal Users
+```
