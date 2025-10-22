@@ -47,6 +47,14 @@ rs // restart
 nodemon -e html .\main.js // make reload for html
 ```
 
+when ypu init your project just go to your package.json and add 
+```json
+  "scripts": {
+    "start": "nodemon yourfile.js", // this line and go to terminal and write npm start
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
 **point :** for exist in terminal form nodemon first **ctrl + c** next write **clear**
 
 ### script package json
@@ -78,4 +86,24 @@ console.log(process.pid); //the pid of the process you have
 console.log(process.arch); //the structure of the operating system
 console.log(process.version); //version node
 console.log(process.platform); //what operating system is the user using?
+```
+
+### Router and Filter
+```js
+// in main file
+const adminRoutes = require('./routes/admin');
+const app = require('express');
+
+app.use("/admin",adminRoutes); // '/admin' is filter and when you create route. it's by defult put /admin after domain
+
+// in file admin
+const express = require('express');
+
+const router = express.Router();
+
+router.get('/',(req,res)=>{ // this route make localhost:3000/admin
+    res.send('<h1>Admin</h1>')
+});
+
+module.exports = router;
 ```

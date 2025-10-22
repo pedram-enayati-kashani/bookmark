@@ -197,9 +197,20 @@ const Counter = ({count})=>{
 
 **props children :** 
 ```js
-  <Counter>
+  <Counter count={10}>
     what ever you write here send to render in object children
   </Counter>
+
+
+    //   in file component
+    const Counter = (props) => {
+    return (
+        <div>
+            <p>شمارنده : {props.count}</p>
+            <p>{props.children}</p>
+        </div>
+    )
+}
 ```
 
 **props default:** if props has not value it make show default value
@@ -225,6 +236,25 @@ const Counter = ({count})=>{
             <p>شمارنده : {count || 90}</p>
         </div>
     );
+}
+
+// class
+
+class Counter extends Component {
+
+    static defaultProps = {
+        count: 150
+    }
+
+    render() {
+        const {count} = this.props;
+        return (
+            <div>
+                <p>شمارنده : {count}</p>
+                <p>{this.props.children}</p>
+            </div>
+        )
+    }
 }
 ```
 

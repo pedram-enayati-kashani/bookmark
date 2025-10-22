@@ -1,11 +1,15 @@
 # laravel
 
 ## version 5.8
+```php
+composer create-project --prefer-dist laravel/laravel blog "5.8.*"
+
+```
 
 ### artisan
 
 #### server
-```
+
 // in default port server is 8000
 php artisan serve
 
@@ -411,4 +415,153 @@ php artisan make:factory PostFactory
 
 ```php
 php artisan make:modal Users
+```
+
+#### fresh and refresh
+
+```php
+$user = User::where('id',4)->get()->first();
+
+$freshUser = $user->fresh(); //Creates a new instance of the user model.
+
+$refreshUser = $user->refresh(); //The created sample will be returned to the previous one.
+
+```
+
+#### $guarded and $fillable
+**guarded** is a protected variable that you can with it specify what can't user register
+
+**fillable** is a protected variable that you can with it specify what can user register
+```php
+protected $guarded = [];
+
+protected $fillable = [];
+```
+
+#### Query Scopes
+make your method for modal
+```php
+// static
+// in modal
+public function scopeActive($query){
+    return $query->where('status',1);
+}
+
+// in controller
+public function index()
+{
+    $posts = Post::active()->get();
+    dd($posts);
+}
+
+// dynamic
+// in modal
+public function scopeActive($query,$status){
+    return $query->where('status',$status);
+}
+
+// in controller
+public function index()
+{
+    $posts = Post::active(0)->get();
+    dd($posts);
+}
+```
+
+#### Accessors & Mutators
+with Accessors you can create a method in your model and edit your data from database
+```php
+// in modal
+// Accessors get
+public function getLastNameAttribute($value){
+    return $value ?: "No Last Name";
+}
+
+// in controller
+$user = User::where('id',2)->first();
+dd($user->last_name);  // getLastNameAttribute change to last_name
+
+// example 2
+// in modal
+public function getFullNameAttribute(){
+    return $this->first_name.' '.$this->last_name;
+}
+
+// in controller
+$user = User::where('id',2)->first();
+dd($user->full_name);  // getFullNameAttribute change to full_name
+
+// example 3
+// set Mutators
+// in modal
+public function settFirstNameAttribute($value){
+    return $this->attribute['first_name'] = strtolower($value);
+}
+
+// in controller
+$user = new User;
+$user->first_name = 'PEDRAM';
+$user->password = '12346';
+$user->save();
+
+```
+
+#### casts
+for specify some value of database you can use casts to specify value type
+```php
+// in modal
+protected $casts = [
+    'status' => 'string',
+]
+```
+
+#### Relationships
+```php
+// one to one
+// user modal
+public function address(){
+    return $this->hasOne('App\Address'); 
+}
+
+// address modal
+public function user(){
+    return $this->belongsTo('App\User'); 
+}
+
+public function user(){
+    return $this->belongsTo('App\User','Owner_id','other_key'); // Owner_id like user_id and other_key like id user modal
+}
+
+// controller
+$address = Address::find(1);
+dd($address->user);
+
+$user = User::find(82);
+dd($user->address);
+
+// one to many
+// Comment modal
+public function post(){
+    return $this->belongsTo('App\Post'); 
+}
+
+// Post modal
+public function comment(){
+    return $this->hasMany('App\Comment'); 
+}
+// controller
+$post = Post::has('comments')->get(); // get posts that has comment
+dd($post);
+
+// when some comment doesn't post_id you can set post_id with associate
+$comment = Comment::find(4);
+$comment->post()->associate(Post::first());
+$comment->save();
+dd($comment);
+
+// when some comment does post_id you can null post_id with dissociate
+$comment = Comment::find(4);
+$comment->post()->dissociate();
+$comment->save();
+dd($comment);
 ```
