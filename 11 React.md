@@ -367,6 +367,64 @@ class Counter extends Component {
 export default Counter;
 ```
 
+#### Authentication
+first you must install prop types
+```js
+// app.js
+import {useState} from 'react';
+import Counter from "./components/Counter";
+import './app.css';
+
+const App = () => {
+
+    const [count,setCount] = useState(0);
+    const increaseCount = ()=>{
+        setCount(count+1);
+    }
+    const decreaseCount = () => {
+        setCount(count-1);
+    }
+    const resetCount = () => {
+        setCount(0);
+    }
+    return (
+        <div className="App">
+            <header>
+                <h1>شمارنده من</h1>
+            </header>
+            <Counter inc={increaseCount} dec={decreaseCount} reset={resetCount} count={count}/>
+        </div>
+    )
+
+}
+
+export default App;
+
+// counter.js
+import PropTypes from 'prop-types';
+
+const Counter = ({inc,dec,reset,count}) => {
+    return (
+        <div>
+            <h1>{count}</h1>
+            <button onClick={inc}>+</button>
+            <button onClick={dec}>-</button>
+            <br/>
+            <button onClick={reset}>reset</button>
+        </div>
+    )
+}
+
+Counter.propTypes = {
+    inc: PropTypes.func,
+    dec: PropTypes.func,
+    reset: PropTypes.func,
+    count: PropTypes.number,
+}
+
+export default Counter;
+```
+
 #### Style
 
 ```js

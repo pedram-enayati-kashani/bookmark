@@ -107,3 +107,56 @@ router.get('/',(req,res)=>{ // this route make localhost:3000/admin
 
 module.exports = router;
 ```
+
+### body-parser
+if ypu want parse your url query use this
+```js
+app.use(bodyParser.urlencoded({extended:false}))
+```
+
+```js
+// server.js
+const path = require('path');
+
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const {setStatics} = require('./utils/statics');
+
+const app = express();
+
+// Middlewares
+app.use(bodyParser.urlencoded({extended:false})); //with this you can access to your data query in parse
+// endMiddlewares
+
+// EJS
+app.set('view engine','ejs'); // Specify the template
+app.set('views','views');
+// End of EJS
+
+// Statics
+setStatics(app); // fun your statics
+
+// Route
+app.get("/",(req,res)=>{ // send data to your root web page
+    res.render("index",{
+        pageTitle: "کارهای روزمره"
+    })
+})
+// endRoute
+
+app.listen(3000,()=>console.log('Server is running.')); // run your local server
+
+// static.js
+const path = require('path');
+
+const express = require('express');
+
+exports.setStatics = (app) => { // add your css file
+    app.use(express.static(path.join(__dirname,"..",'public')));
+    app.use(express.static(path.join(__dirname,"..",'node_modules','bootstrap-v4-rtl',"dist")));
+    app.use(express.static(path.join(__dirname,"..",'node_modules','font-awesome')));
+}
+
+
+```
